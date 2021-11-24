@@ -1,12 +1,10 @@
 package tests.telecomunications.positive;
 
 import org.junit.jupiter.api.Test;
-import pages.telecomunications.MobilePhoneReplenishmentPage;
 import tests.base.BaseTest;
 import static constants.Constant.Urls.MOBILE_PAYMENT_URL;
 
-public class MobilePhoneReplenishmentTest extends BaseTest {
-    public MobilePhoneReplenishmentPage mobilePhoneReplenishmentPage;
+public class MobilePhoneReplenishmentPositiveTest extends BaseTest {
 
     @Test
     public void checkIsRedirectToAuth(){

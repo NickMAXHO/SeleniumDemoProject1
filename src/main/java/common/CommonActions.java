@@ -3,37 +3,30 @@ package common;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
 import java.util.concurrent.TimeUnit;
-
 import static common.Config.BROWSER_AND_PLATFORM;
 import static constants.Constant.TimeoutVariables.IMPLICIT_WAIT;
+import static constants.Constant.Urls.MOBILE_PAYMENT_URL;
 
 public class CommonActions {
     public static WebDriver createDriver(){
-        WebDriver driver = null;
         switch (BROWSER_AND_PLATFORM) {
-            case "CHROME_MAC":
+            case "CHROME_MAC" :
                 System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver");
-                driver = new ChromeDriver();
-                break;
+                return new ChromeDriver();
 
-            case "CHROME_WINDOWS":
+            case "CHROME_WINDOWS" :
                 System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver.exe");
-                driver = new ChromeDriver();
-                break;
+                return new ChromeDriver();
 
-            case "MOZILLA_WINDOWS":
+            case "MOZILLA_WINDOWS" :
                 System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
-                driver = new FirefoxDriver();
-                break;
+                return new FirefoxDriver();
 
             default:
-                Assertions.fail("INCORRECT BROWSER NAME " + BROWSER_AND_PLATFORM);
+                return new ChromeDriver();
         }
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT, TimeUnit.SECONDS);
-        return driver;
     }
 }

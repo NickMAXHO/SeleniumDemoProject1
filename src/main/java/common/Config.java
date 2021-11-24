@@ -9,6 +9,7 @@ public class Config {
      * MOZILLA_MAC
      * */
     public static final String BROWSER_AND_PLATFORM = "CHROME_WINDOWS";
+
     /**
      * Clean Browser after each run
      * */
