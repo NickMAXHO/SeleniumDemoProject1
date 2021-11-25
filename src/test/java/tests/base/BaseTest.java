@@ -30,6 +30,7 @@ public class BaseTest {
         BasePage.initDriver();
         mobilePhoneReplenishmentPage = new MobilePhoneReplenishmentPage();
         basePage = new BasePage();
+        carLoansPage = new CarLoansPage();
     }
 
     @AfterEach

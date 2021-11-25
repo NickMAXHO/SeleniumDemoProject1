@@ -1,6 +1,7 @@
 package tests.loans.positive;
 
 import org.junit.jupiter.api.Test;
+import pages.loans.CarLoansPage;
 import tests.base.BaseTest;
 
 import static constants.Constant.Urls.CAR_LOANS_PAGE_URL;
